@@ -1,0 +1,52 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(160deg, #0b0e1a 0%, #141033 55%, #062a33 100%);
+  color: #eef0ff; min-height: 100vh;
+}
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 22px; flex-wrap: wrap; gap: 10px;
+}
+.logo { font-size: 22px; font-weight: 800; letter-spacing: .3px; }
+.head-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.badge {
+  background: rgba(120, 220, 200, .15); color: #7fe7c8; border: 1px solid rgba(127,231,200,.4);
+  padding: 5px 10px; border-radius: 999px; font-size: 12.5px; font-weight: 600;
+}
+button, .btn {
+  background: linear-gradient(90deg, #8b7cf6, #4fd8c0); color: #0b0e1a; border: 0;
+  padding: 9px 16px; border-radius: 999px; font-weight: 700; cursor: pointer;
+  text-decoration: none; display: inline-block; font-size: 14px;
+}
+main { max-width: 860px; margin: 0 auto; padding: 8px 18px 40px; }
+.hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.12; margin: 18px 0 10px; }
+.hero p { color: #c6c9e8; max-width: 640px; }
+.stats { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0 6px; }
+.stat {
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+  border-radius: 14px; padding: 12px 16px; min-width: 180px;
+}
+.stat span { display: block; font-size: 12px; color: #9aa0c7; text-transform: uppercase; letter-spacing: .06em; }
+.stat b { font-size: 16.5px; }
+.card {
+  background: rgba(255,255,255,.055); border: 1px solid rgba(255,255,255,.11);
+  border-radius: 18px; padding: 20px; margin-top: 18px;
+}
+.card h2 { margin-top: 0; font-size: 20px; }
+.muted { color: #aab; color: #a7abd0; font-size: 14px; }
+label { display: block; margin: 14px 0; font-size: 14.5px; }
+label.check { display: flex; gap: 8px; align-items: center; }
+input[type="number"] {
+  width: 100%; margin-top: 6px; padding: 11px 12px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.2); background: rgba(0,0,0,.3); color: #fff; font-size: 16px;
+}
+input[type="range"] { width: 100%; margin-top: 8px; }
+.row, .contract {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 2px; border-bottom: 1px solid rgba(255,255,255,.08); font-size: 15px;
+}
+.contract a { color: #7fe7c8; text-decoration: none; font-family: ui-monospace, monospace; }
+code { background: rgba(255,255,255,.09); padding: 1px 6px; border-radius: 6px; font-size: .92em; }
+footer { color: #8b90b5; font-size: 13px; margin-top: 26px; }
+footer a { color: #7fe7c8; }

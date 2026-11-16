@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launchora — a mini launchpad on GIWA, built with the Ammora SDK</title>
+<meta name="description" content="Launchora is a mini launchpad and fee-preview console for GIWA Sepolia, built with the public Ammora SDK (@ammora-protocol/sdk 0.3.9).">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">◉ Launchora</div>
+  <div class="head-right">
+    <span class="badge" id="chainName">GIWA Sepolia</span>
+    <button id="connect">Connect wallet</button>
+    <span id="wallet"></span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Launch on GIWA,<br>powered by Ammora.</h1>
+    <p>Launchora is a mini launchpad console built with the public
+    <b>Ammora SDK</b> (<code>@ammora-protocol/sdk@0.3.9</code>). It reads the
+    reviewed auto-route V4 deployment on GIWA Sepolia straight from the SDK
+    and previews exactly how launch fees split between protocol, creator,
+    partner and referral — using the SDK's own fee-distribution function.</p>
+    <div class="stats">
+      <div class="stat"><span>Network</span><b id="chainName2">GIWA Sepolia · 91342</b></div>
+      <div class="stat"><span>Latest block</span><b id="block">…</b></div>
+      <div class="stat"><span>Deployment slot</span><b id="slot">…</b></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Launch fee preview</h2>
+    <p class="muted">Computed live in your browser by
+    <code>previewAmmoraLaunchFeeDistribution</code> from the Ammora SDK.</p>
+    <label>Total trading fee (ETH)
+      <input id="feeAmount" type="number" min="0" step="0.1" value="1">
+    </label>
+    <label>Creator share of the non-protocol part: <b id="creatorShareOut">70%</b>
+      <input id="creatorShare" type="range" min="0" max="100" step="1" value="70">
+    </label>
+    <label class="check"><input id="referral" type="checkbox"> Include a referral</label>
+    <div id="feeBreakdown"></div>
+  </section>
+
+  <section class="card">
+    <h2>Ammora contracts on GIWA Sepolia</h2>
+    <p class="muted">Addresses pinned by the SDK's reviewed deployment
+    (<code>giwaSepoliaAutoRouteDeployment</code>). Tap one to inspect it in the explorer.</p>
+    <div id="contracts"></div>
+  </section>
+
+  <section class="card">
+    <h2>ETH → $tAMM converter</h2>
+    <p class="muted">Indicative only — reference price 0.0001970218 ETH per $tAMM,
+    as displayed on ammora.org on 16 Nov 2026. Testnet figures, not a quote.</p>
+    <label>Amount (ETH)
+      <input id="convEth" type="number" min="0" step="0.01" value="0.1">
+    </label>
+    <div class="row"><span>You would get roughly</span><b id="convOut">—</b></div>
+    <p><a class="btn" href="https://ammora.org/waitlist/boost" target="_blank" rel="noopener">Swap &amp; stake on Ammora →</a></p>
+  </section>
+
+  <footer>
+    <p>Built for the Ammora Season 2 Builder Mission · GIWA Sepolia testnet ·
+    Source: <a href="https://github.com/Ismailzilud/launchora">github.com/Ismailzilud/launchora</a></p>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>
